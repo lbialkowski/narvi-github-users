@@ -3,10 +3,11 @@ import { GithubUsersListItem } from "./GithubUsersListItem";
 import { GithubUsersListSkeleton } from "./GithubUsersListSkeleton";
 import { Alert, List } from "@mui/material";
 import { useGithubUsers } from "./hooks";
+import { memo } from "react";
 
 type GithubUsersListProps = { search?: string };
 
-export const GithubUsersList = ({ search }: GithubUsersListProps) => {
+export const GithubUsersList = memo(({ search }: GithubUsersListProps) => {
   const {
     fetchNextPage,
     isFetchingNextPage,
@@ -76,4 +77,6 @@ export const GithubUsersList = ({ search }: GithubUsersListProps) => {
   }
 
   return null;
-};
+});
+
+GithubUsersList.displayName = 'GithubUsersList'
