@@ -1,8 +1,8 @@
 import { BaseInfiniteList } from "../ui";
 import { GithubUsersListItem } from "./GithubUsersListItem";
-import { useGithubUsers } from "./useGithubUsers";
 import { GithubUsersListSkeleton } from "./GithubUsersListSkeleton";
 import { Alert, List } from "@mui/material";
+import { useGithubUsers } from "./hooks";
 
 type GithubUsersListProps = { search?: string };
 
