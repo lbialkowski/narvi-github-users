@@ -65,7 +65,7 @@ export async function POST(request: Request) {
     // If user doesn't exist, create them (or ensure they are the same)
     // The original code did: await this.userService.create(user, pubKey, counter, credentialID, transports);
     // We need to ensure the user is stored.
-    let existingUser = await storage.findUserByEmail(user.email);
+    const existingUser = await storage.findUserByEmail(user.email);
     if (!existingUser) {
       await storage.createUser(user);
     }
